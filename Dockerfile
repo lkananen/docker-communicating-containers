@@ -15,5 +15,5 @@ RUN npm install
 # Bundle app source
 COPY . /app
 
-EXPOSE 8893
+EXPOSE 8001
 CMD [ "node", "server-test.js" ]
