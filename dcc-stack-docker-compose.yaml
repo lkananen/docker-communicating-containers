@@ -2,12 +2,40 @@ version: '3.7'
 
 services:
   dcc-app1:
+    container_name: my-dcc-service-1
+    build:
+      context: ./Service1
+      dockerfile: Dockerfile
     image: dcc-image-service1:1.0
     ports:
-      - "8001:80"
+      - "8001:8001"
+    deploy:
+      replicas: 1
     links:
       - "dcc-app2"
+    networks:
+      - app_net:
+          ipv4_address: 172.16.238.11
+
   dcc-app2:
+    container_name: my-dcc-service-2
+    build:
+      context: ./Service2
+      dockerfile: Dockerfile
     image: dcc-image-service2:1.0
     ports:
-      - "80:8001"
+      - "8001:8001"
+    deploy:
+      replicas: 1
+    networks:
+      - app_net:
+          ipv4_address: 172.16.238.12
+    expose:
+      - "8001"
+
+networks:
+  app_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.238.0/24"

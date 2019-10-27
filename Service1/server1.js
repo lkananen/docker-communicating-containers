@@ -6,7 +6,7 @@ http.createServer(function (req, res) {
   console.log("Hello from " + req.client.remoteAddress + ":" + req.client.remotePort + " to " + req.client.localAddress + ":" + req.client.localPort);
   
   const options = {
-    hostname: '172.17.0.2',
+    hostname: '172.16.238.12',
     port: 8001,
     method: 'GET'
   }
