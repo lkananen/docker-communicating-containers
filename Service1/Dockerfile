@@ -16,4 +16,4 @@ RUN npm install
 COPY . /app
 
 EXPOSE 8001
-CMD [ "node", "server-test.js" ]
+CMD [ "node", "server1.js" ]
