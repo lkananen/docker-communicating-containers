@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  dcc-app1:
+    image: dcc-image-service1:1.0
+    ports:
+      - "8001:80"
+    links:
+      - "dcc-app2"
+  dcc-app2:
+    image: dcc-image-service2:1.0
+    ports:
+      - "80:8001"
