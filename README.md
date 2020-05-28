@@ -18,8 +18,9 @@ Details of the architecture:
 * Container 2 = The container running inside a private network. Exposed only to container 1. Running internal service.
 
 ## Instructions
+TODO
 
-Useful commands
+### Some useful commands
 
 | Command | Action |
 | ------- | ------ |
